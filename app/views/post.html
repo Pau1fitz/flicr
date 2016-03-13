@@ -1,0 +1,65 @@
+<div class="post-page">
+    <div class="container">
+        <img class="spinner" src="../app/images/spinner.gif" data-ng-show="ctrl.loading" alt="Spinner" />
+        <div ng-show="ctrl.error" class="error">
+            <p>Sorry but there has been an error with loading content. Please try again soon.</p>
+        </div>
+        <div class="head">  
+            <div class="row">
+                <div class="col-sm-10">
+                    <h3><a ng-href="{{ctrl.posts[ctrl.currentId].link}}">{{ctrl.posts[ctrl.currentId].title}}</a></h3>    
+                </div>
+                <div class="col-sm-2">
+                    <a href="#/"><i class="fa fa-arrow-left fa-2x back-arrow"></i></a>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="sub-head">  
+            <div class="row">
+                <div class="col-sm-2">
+                    <p class="author">{{ctrl.posts[ctrl.currentId].author | regex}}</p>
+                </div>
+                <div class="col-sm-10">
+                    <p class="date">Published: {{ctrl.posts[ctrl.currentId].published | date:'d MMM yyyy'}} at {{ctrl.posts[ctrl.currentId].published | date:'h:mm'}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="main">
+            <div class="row">
+                <div class="col-xs-4 post-image">
+                    <div>  
+                        <a ng-href="#/{{($index)}}"><img ng-src="{{ctrl.posts[ctrl.currentId].media.m}}" alt="Post Photo"></a>
+                    </div>
+                </div>
+                <div class="col-xs-8 post">
+                    <!-- Placeholder text taken from kanyeipsum.com -->
+                    <p>Finally!!! Our guy!!! We're so so happy for Leo!!! I want people to be the best version of themselves and I will be the best version of me. Perhaps it was seeing him play the same character from 15 years ago with 15 more years experience The choir arrangement that Kirk orchestrated is the most powerful thing I've heard in my earthly existence.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <p ng-repeat="tag in ctrl.tags[ctrl.currentId] | limitTo:4" class="tags">
+                       {{tag}}
+                    </p>
+                    <p class="tags">Tags: </p>
+                </div>
+            </div>
+             
+               
+       
+            
+
+        </div>
+        <div class="row g-plusone">
+            <div class="col-sm-12">
+                <div id="content">
+                <div class="g-plusone" data-annotation="inline" data-width="300"></div>
+            </div>
+        </div>
+    </div>
+</div>
+  
+
+
+

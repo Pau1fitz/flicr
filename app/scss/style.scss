@@ -1,0 +1,331 @@
+//Main SASS file
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// Imports the style
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+@import 'imports';
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+// Style
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p,
+a, img, ol, ul, li {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+body {
+    line-height: 1;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+body {
+  font-size: $size-1;
+  background: $color-light;
+  color: $color-dark;
+  font-family: $family-1;
+  font-weight: 400; 
+}
+
+#app-page {
+    background-color: $color-light;
+     
+     .container {
+        max-width: 800px;
+        margin: 0 auto;
+
+        @include media(screen, max, 767px) {
+            padding: 0 px(45);
+        } 
+    }
+
+    .nav{    
+        display: block;
+        background-color: $header-bg; 
+        padding: px(8) 0;
+
+        h1{
+            font-size: $size-4;
+            font-family: $family-1;
+            font-weight: 400;
+            color: $color-dark;
+            padding-top: px(20);
+            margin: 0;
+        }
+
+        .logo {
+            background: url("https://p.ota.to/static/img/logo.svg") no-repeat;
+            display: block;
+            width: 100%;
+            height: 70px; 
+        }
+    }
+
+    .home-page {
+
+        h3 {
+            color: $color-dark;
+            font-size: $size-3;
+            font-family: $family-1;
+        }
+
+        p{
+            font-size: $size-1;
+            font-weight: 400;
+            color: $color-dark;
+            line-height: 1.5;
+            font-family: $family-1;
+        }
+
+        a {
+            color: $color-dark;
+            font-family: $family-1;
+        }
+
+        hr {
+            margin-top: px(-20);
+            margin-bottom: px(40);
+        }
+
+        .spinner { 
+            width: 50%;
+            margin-left: 25%;
+        }
+
+        .error {
+            margin-top: px(25);
+        }
+
+        .search { 
+            margin-top: px(25);
+            float: right;
+
+            @include media(screen, max, 640px) {
+                float: none;
+                text-align: center;
+            } 
+        }
+
+        .user-posts {
+            margin-top: px(10);
+            padding: px(25) 0;
+            border-bottom: 1px solid $color-gray;
+            clear: both;
+        }
+
+        .post-image {
+
+            @include media(screen, max, 580px) {
+                width: 100%;
+                text-align: center;
+            }   
+
+            img {
+                width: 100%;
+                height: px(165);
+                @include border-radius(50%);
+
+                @include media(screen, max, 580px) {
+                    width: 50%;
+                }  
+
+                @include media(screen, max, 420px) {
+                    width: 75%;
+                }    
+            }  
+        }
+        
+        .post-details {
+            overflow: hidden;
+
+            @include media(screen, max, 580px) {
+                width: 100%;
+                text-align: center;
+            }  
+
+            hr {
+                @include media(screen, max, 580px) {
+                    display: none;
+                }  
+            }
+
+            .post-author,
+            .post-date,
+            .user-page,
+            .post-date,
+            .flickr-link {
+                display: inline-block;
+                padding-right: px(10);
+            }
+
+            .post-title { 
+                margin: px(35) px(0);
+                
+                @include media(screen, max, 580px) {
+                    width: 100%;
+                    text-align: center;
+                }   
+            }
+
+            .post-title a {
+                text-decoration: none;
+            }
+
+            .post-title:hover,
+            .post-title a:hover {
+                @include opacity(0.6);
+                text-decoration: none;
+            }
+
+            .post-author {
+                font-size: $size-2;
+                font-weight: 800;
+                text-decoration: underline;
+            }
+
+            .post-author:hover,
+            .post-author a:hover {
+                @include opacity(0.6);
+                text-decoration: none;
+            }
+
+            .flickr-link {
+                font-size: $size-1;
+                font-weight: 800;
+                text-decoration: underline;
+            }
+
+            .flickr-link:hover,
+            .flickr-link a:hover {
+                @include opacity(0.6);
+                text-decoration: none;
+            }
+        }
+
+        .load-posts {
+            text-align: center;
+            margin-top: px(25);
+        }
+
+        .load-posts:hover {
+            cursor: pointer;
+        }
+    }
+
+    .post-page {
+
+        h3 {
+            color: $color-dark;
+            font-size: $size-3;
+            font-family: $family-1;
+        }
+
+        p{
+            font-size: $size-1;
+            font-weight: 400;
+            color: $color-dark;
+            line-height: 1.5;
+            font-family: $family-1;
+        }
+
+        a {
+            color: $color-dark;
+            font-family: $family-1;
+        }
+
+        .spinner { 
+            width: 50%;
+            margin-left: 25%;
+        }
+
+        .error { 
+            margin-top: px(25);
+        }
+
+        .back-arrow {
+            margin-top: px(15);
+        }
+
+        .author {
+            border-right: 1px solid $color-gray;
+
+            @include media(screen, max, 580px) {
+                border-right: none;
+                text-align: center;
+            }
+        }
+
+        .date {
+
+            @include media(screen, max, 580px) {
+                text-align: center;
+            }
+        }
+
+        .head { 
+            margin-top: px(10);
+
+            @include media(screen, max, 580px) {
+                text-align: center;
+            }
+        }
+
+        .sub-head {
+            margin-top: px(25);
+        }
+
+        .main { 
+            margin-top: px(25);
+        
+            .post { 
+                margin-top: px(15);
+
+                @include media(screen, max, 580px) {
+                    text-align: center;
+                    width: 100%;
+                }
+            }
+
+            .post-image {
+
+                @include media(screen, max, 580px) {
+                    width: 100%;
+                    text-align: center;
+                }
+
+                img {
+                    width: 100%;
+                    height: px(230);
+                    @include border-radius(50%);
+
+                    @include media(screen, max, 580px) {
+                        width: 50%;
+                    }   
+
+                    @include media(screen, max, 420px) {
+                        width: 75%;
+                    }   
+                }
+            }
+
+            .tags { 
+                float: right;
+                padding: 0 px(15);
+            }
+        }
+
+        .g-plusone { 
+            float: left;
+            margin-top: px(25);
+        }
+    }
+}
