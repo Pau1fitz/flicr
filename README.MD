@@ -11,7 +11,7 @@ Run 'grunt' and open 'localhost:8000' in the browser of your choice
 
 About
 ------
-
+**Update** Includes search and tags.
 Use of grunt
 ------------
 I set up grunt in this project both for development purposes, and to minify the css and javascript to be used in the final prodiction code. This minified code can be found in app/production/css && app/production/js. During development the live reload functionality provided is very convenient, and any errors in your code are flagged immediately. Grunt is an essential part of my developer toolkit.
